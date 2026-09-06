@@ -31,15 +31,13 @@ Azure SQL Database / Microsoft SQL Server
 
 ---
 
-## Technologies Used
+## Technologies -
 
 - **Runtime**: Node.js (v22)
-- **Backend Language**: TypeScript
+- **Backend**: TypeScript
 - **Serverless Backend**: `@azure/functions` (v4 Programming Model)
-- **Database**: Azure SQL Database / Microsoft SQL Server (compatible T-SQL DDL & DML)
-- **Database Driver**: `mssql` (with parameterized inputs)
-- **Automated Testing**: `vitest`
-- **Frontend UI**: React 18, TypeScript, Vite, `lucide-react` icons, and Google **Work Sans** typography
+- **DB**: Azure SQL Database / Microsoft SQL Server (compatible T-SQL DDL & DML)
+- **Frontend UI**: React 18, TypeScript
 
 ---
 
