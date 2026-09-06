@@ -1,0 +1,26 @@
+{
+  "name": "employee-compensation-service-backend",
+  "version": "1.0.0",
+  "description": "Employee Compensation Service backend using Azure Functions and SQL Server",
+  "main": "dist/src/functions/*.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prestart": "npm run build",
+    "start": "func start",
+    "dev": "tsx src/server.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.6.0",
+    "dotenv": "^16.4.7",
+    "mssql": "^11.0.1"
+  },
+  "devDependencies": {
+    "@types/mssql": "^9.0.6",
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
