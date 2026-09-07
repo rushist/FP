@@ -64,6 +64,18 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8F2B0254777B4623986059EAC94D95DF }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_493EE4B1822C483C8651ABB55633653B }}
 
+      - name: Configure Function App CORS
+        uses: azure/cli@v2
+        continue-on-error: true
+        with:
+          inlineScript: |
+            $rg = (az functionapp list --query "[?name=='fn-employee-api-rush'].resourceGroup" -o tsv)
+            if ($rg) {
+              az functionapp cors add --name fn-employee-api-rush --resource-group $rg.Trim() --allowed-origins "https://lemon-plant-0fd551b00.3.azurestaticapps.net" "http://localhost:3000"
+            } else {
+              az functionapp cors add --name fn-employee-api-rush --allowed-origins "https://lemon-plant-0fd551b00.3.azurestaticapps.net" "http://localhost:3000"
+            }
+
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa

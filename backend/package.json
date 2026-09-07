@@ -2,7 +2,7 @@
   "name": "employee-compensation-service-backend",
   "version": "1.0.0",
   "description": "Employee Compensation Service backend using Azure Functions and SQL Server",
-  "main": "dist/src/functions/*.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",

@@ -106,6 +106,9 @@ export class DatabaseConnection {
 
   public async isHealthy(): Promise<boolean> {
     try {
+      if (!this.isConnected) {
+        await this.initialize();
+      }
       if (this.config.isMemoryMode) {
         return true;
       }
