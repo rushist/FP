@@ -20,10 +20,11 @@ export class ApiError extends Error {
   }
 }
 
-const BASE_URL = '/api';
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api').replace(/\/$/, '');
 
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-  const url = `${BASE_URL}${endpoint}`;
+  const formattedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  const url = `${BASE_URL}${formattedEndpoint}`;
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     ...(options.headers || {}),
