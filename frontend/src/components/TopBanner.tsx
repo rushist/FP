@@ -120,6 +120,8 @@ export const TopBanner: React.FC<TopBannerProps> = ({ onNavigate }) => {
           />
           <input
             ref={searchInputRef}
+            id="global-employee-search"
+            name="global-employee-search"
             type="text"
             className="navbar-search-input"
             placeholder="Search employee by name or ID..."

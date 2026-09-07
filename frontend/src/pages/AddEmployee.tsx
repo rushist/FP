@@ -115,10 +115,12 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
         <form onSubmit={handleSubmit}>
           <div className="form-grid">
             <div className="form-group">
-              <label className="form-label">
+              <label htmlFor="add-first-name" className="form-label">
                 First Name <span className="required">*</span>
               </label>
               <input
+                id="add-first-name"
+                name="firstName"
                 type="text"
                 className="form-input"
                 placeholder="John"
@@ -130,10 +132,12 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">
+              <label htmlFor="add-last-name" className="form-label">
                 Last Name <span className="required">*</span>
               </label>
               <input
+                id="add-last-name"
+                name="lastName"
                 type="text"
                 className="form-input"
                 placeholder="Doe"
@@ -145,10 +149,12 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">
+              <label htmlFor="add-department" className="form-label">
                 Department <span className="required">*</span>
               </label>
               <select
+                id="add-department"
+                name="departmentId"
                 className="form-input"
                 value={departmentId}
                 onChange={(e) => setDepartmentId(e.target.value)}
@@ -163,10 +169,12 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">
+              <label htmlFor="add-salary" className="form-label">
                 Salary (INR) <span className="required">*</span>
               </label>
               <input
+                id="add-salary"
+                name="salary"
                 type="number"
                 className="form-input"
                 placeholder="95000"
@@ -179,9 +187,11 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Bonus (Optional)</label>
+              <label htmlFor="add-bonus" className="form-label">Bonus (Optional)</label>
               <div className="bonus-input-group">
                 <input
+                  id="add-bonus"
+                  name="bonus"
                   type="number"
                   className="form-input bonus-input"
                   placeholder={bonusType === 'INR' ? 'e.g. 5000' : 'e.g. 5 (for 5%)'}
@@ -191,6 +201,8 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
                   step={bonusType === 'INR' ? '0.01' : '0.1'}
                 />
                 <select
+                  id="add-bonus-type"
+                  name="bonusType"
                   className="bonus-type-select"
                   value={bonusType}
                   onChange={(e) => setBonusType(e.target.value as 'INR' | 'PERCENT')}
@@ -207,10 +219,12 @@ export const AddEmployee: React.FC<AddEmployeeProps> = ({ onNavigate }) => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">
+              <label htmlFor="add-hire-date" className="form-label">
                 Hire Date <span className="required">*</span>
               </label>
               <input
+                id="add-hire-date"
+                name="hireDate"
                 type="date"
                 className="form-input"
                 value={hireDate}
